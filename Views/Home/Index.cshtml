@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">An Awesome List of Books to Read!</h1>
+    <br />
+</div>
+
+@foreach (var x in Model)
+{
+<div class="text-center">
+    <h3>@x.Title</h3>
+    <p>Author: @x.AuthorFirst @x.AuthorLast</p>
+    <p>Publisher: @x.Publisher</p>
+    <p>ISBN: @x.ISBN</p>
+    <p>Classification/Category: @x.Class, @x.Cat</p>
+    <p>Price: $@x.Price</p>
+</div>
+}
