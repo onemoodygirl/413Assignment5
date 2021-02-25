@@ -9,7 +9,7 @@ using MoodyAssignment5.Models;
 namespace MoodyAssignment5.Migrations
 {
     [DbContext(typeof(BookDBContext))]
-    [Migration("20210218064543_Initial")]
+    [Migration("20210225051653_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,6 +48,9 @@ namespace MoodyAssignment5.Migrations
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

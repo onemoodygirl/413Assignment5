@@ -26,8 +26,15 @@ using MoodyAssignment5.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/mallorymoody/Projects/MoodyAssignment5/MoodyAssignment5/Views/_ViewImports.cshtml"
+using MoodyAssignment5.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f400a24e4f1c1f8dbc87c0f761266a45e781e06b", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fc8825ced67b5607cbd897e3891e73a6ac0d1a5f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b14894272a3a700379077523bda73de526104776", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

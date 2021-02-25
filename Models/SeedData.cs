@@ -8,6 +8,7 @@ namespace MoodyAssignment5.Models
 {
     public class SeedData
     {
+        //data entered for the database
         public static void EnsurePopulated (IApplicationBuilder application)
         {
             BookDBContext context = application.ApplicationServices.
@@ -29,6 +30,8 @@ namespace MoodyAssignment5.Models
                         Class = "Fiction",
                         Cat = "Classic",
                         Price = 9.95,
+                        //pages added
+                        Pages = 1488,
                     },
 
                     new Book
@@ -42,6 +45,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Biography",
                         Price = 14.58,
+                        Pages = 944,
                     },
 
                     new Book
@@ -54,6 +58,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Biography",
                         Price = 21.54,
+                        Pages = 832,
                     },
 
                     new Book
@@ -67,6 +72,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Biography",
                         Price = 11.61,
+                        Pages = 864,
                     },
 
                     new Book
@@ -79,6 +85,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Historical",
                         Price = 13.33,
+                        Pages = 528,
                     },
 
                     new Book
@@ -91,6 +98,7 @@ namespace MoodyAssignment5.Models
                         Class = "Fiction",
                         Cat = "Historical Fiction",
                         Price = 15.95,
+                        Pages = 288,
                     },
 
                     new Book
@@ -103,6 +111,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Self-Help",
                         Price = 14.99,
+                        Pages = 304,
                     },
 
                     new Book
@@ -115,6 +124,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Self-Help",
                         Price = 21.66,
+                        Pages = 240,
                     },
 
                     new Book
@@ -127,6 +137,7 @@ namespace MoodyAssignment5.Models
                         Class = "Non-Fiction",
                         Cat = "Business",
                         Price = 29.16,
+                        Pages = 400,
                     },
 
                     new Book
@@ -139,6 +150,47 @@ namespace MoodyAssignment5.Models
                         Class = "Fiction",
                         Cat = "Thrillers",
                         Price = 15.03,
+                        Pages = 642,
+                    },
+
+                    //3 new books added
+                    new Book
+                    {
+                        Title = "The Phantom Tollbooth",
+                        AuthorFirst = "Norton",
+                        AuthorLast = "Juster",
+                        Publisher = "Random House",
+                        ISBN = "978-0394820378",
+                        Class = "Fiction",
+                        Cat = "Fantasy",
+                        Price = 3.88,
+                        Pages = 255,
+                    },
+
+                    new Book
+                    {
+                        Title = "The Book Thief",
+                        AuthorFirst = "Markus",
+                        AuthorLast = "Zusak",
+                        Publisher = "Picador",
+                        ISBN = "978-0739337271",
+                        Class = "Fiction",
+                        Cat = "Historical Fiction",
+                        Price = 6.99,
+                        Pages = 584,
+                    },
+
+                    new Book
+                    {
+                        Title = "Disrupt Yourself",
+                        AuthorFirst = "Whitney",
+                        AuthorLast = "Johnson",
+                        Publisher = "Bibliomotion",
+                        ISBN = "978-1629560526",
+                        Class = "Non-Fiction",
+                        Cat = "Business, Self-Help",
+                        Price = 18.94,
+                        Pages = 208,
                     }
                 );
 
