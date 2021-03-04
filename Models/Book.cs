@@ -5,6 +5,7 @@ namespace MoodyAssignment5.Models
 {
     public class Book
     {
+        //declare vars
         [Key]
         public int BookID { get; set; }
 
@@ -33,5 +34,8 @@ namespace MoodyAssignment5.Models
 
         [Required]
         public double Price { get; set; }
+
+        [Required]
+        public int Pages { get; set; }
     }
 }

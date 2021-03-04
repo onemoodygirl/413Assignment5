@@ -2,19 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">An Awesome List of Books to Read!</h1>
-    <br />
-</div>
+@model BookListViewModel
 
-@foreach (var x in Model)
+@*loop to display all the books*@
+@foreach (var x in Model.Books)
 {
-<div class="text-center">
-    <h3>@x.Title</h3>
-    <p>Author: @x.AuthorFirst @x.AuthorLast</p>
-    <p>Publisher: @x.Publisher</p>
-    <p>ISBN: @x.ISBN</p>
-    <p>Classification/Category: @x.Class, @x.Cat</p>
-    <p>Price: $@x.Price</p>
-</div>
+    @*partial view!*@
+    <partial name="ProjectSummary" model="x" />
 }
+
+@*makes buttons look nice*@
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right m-1"></div>

@@ -1,0 +1,22 @@
+﻿
+
+<div class="text-center card card-outline-primary m-1 p-1">
+    @*bootstrap added to add border and dropshadow around title, also to make the font blue*@
+    <div class="shadow p-8 mb-7 bg-white rounded text-info">
+        <h3>@Model.Title</h3>
+    </div>
+    <br />
+    @*bootstrap added to make the text lighter*@
+    <div class="text-muted">
+        <p>Author: @Model.AuthorFirst @Model.AuthorLast</p>
+        <p>Publisher: @Model.Publisher</p>
+        <p>ISBN: @Model.ISBN</p>
+        <p>Classification/Category: @Model.Class, @Model.Cat</p>
+        @*bootsrap added to make the font bold*@
+        <div class="font-weight-bold">
+            <p>Price: $@Model.Price</p>
+        </div>
+        <p>Page Count: @Model.Pages pages </p>
+    </div>
+</div>
+<br />
