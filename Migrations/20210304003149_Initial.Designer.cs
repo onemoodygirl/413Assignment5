@@ -9,7 +9,7 @@ using MoodyAssignment5.Models;
 namespace MoodyAssignment5.Migrations
 {
     [DbContext(typeof(BookDBContext))]
-    [Migration("20210225051653_Initial")]
+    [Migration("20210304003149_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

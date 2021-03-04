@@ -188,7 +188,7 @@ namespace MoodyAssignment5.Models
                         Publisher = "Bibliomotion",
                         ISBN = "978-1629560526",
                         Class = "Non-Fiction",
-                        Cat = "Business, Self-Help",
+                        Cat = "Self-Help",
                         Price = 18.94,
                         Pages = 208,
                     }

@@ -4,38 +4,15 @@
 
 @model BookListViewModel
 
-@*title of the page*@
-<div class="text-center bg-dark text-white p-3">
-    <h1 class="display-4">An Awesome List of Books to Read!</h1>
-</div>
-<br />
-
+@*loop to display all the books*@
 @foreach (var x in Model.Books)
 {
-<div class="text-center card card-outline-primary m-1 p-1">
-    @*bootstrap added to add border and dropshadow around title, also to make the font blue*@
-    <div class="shadow p-8 mb-7 bg-white rounded text-info">
-        <h3>@x.Title</h3>
-    </div>
-    <br />
-    @*bootstrap added to make the text lighter*@
-    <div class="text-muted">
-        <p>Author: @x.AuthorFirst @x.AuthorLast</p>
-        <p>Publisher: @x.Publisher</p>
-        <p>ISBN: @x.ISBN</p>
-        <p>Classification/Category: @x.Class, @x.Cat</p>
-        @*bootsrap added to make the font bold*@
-        <div class="font-weight-bold">
-            <p>Price: $@x.Price</p>
-        </div>
-        <p>Page Count: @x.Pages pages </p>
-    </div>
-</div>
-<br />
+    @*partial view!*@
+    <partial name="ProjectSummary" model="x" />
 }
 
 @*makes buttons look nice*@
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
      page-class-normal="btn-outline-dark"
-     page-class-selected="btn-primary"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
      class="btn-group pull-right m-1"></div>
