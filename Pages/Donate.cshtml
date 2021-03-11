@@ -1,0 +1,53 @@
+﻿@page
+@model MoodyAssignment5.Pages.DonateModel
+
+@{
+}
+
+<h2>Your Cart</h2>
+
+@*the shopping cart!*@
+<table class="table table-bordered table-striped">
+    @*the shopping cart table!*@
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td>@line.Book.Title</td>
+                <td>@line.Quantity</td>
+                <td class="text-right">$@line.Book.Price.ToString()</td> @*ToString("c") gave me the universal currency symbol instead of a $*@
+                <td>$@((line.Quantity * line.Book.Price).ToString())</td>
+                <td class="text-center">
+                    @*the remove button*@
+                    <form asp-page-handler="Remove" method="post">
+                        <input type="hidden" name="BookID" value="@line.Book.BookID" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            @*calculates total*@
+            <td colspan="3" class="text-right">Total:</td>
+            <td>$@Model.Cart.CoomputeTotalSum().ToString()</td>
+        </tr>
+    </tfoot>
+
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>

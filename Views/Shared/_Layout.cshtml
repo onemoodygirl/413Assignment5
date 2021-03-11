@@ -7,6 +7,7 @@
     <title>@ViewData["Title"] - MoodyAssignment7</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -27,10 +28,21 @@
     <div class="text-center bg-dark text-white p-3">
         <h1 class="display-4">An Awesome List of Books to Read!</h1>
     </div>
+    @*adds the cart summary to the nav bar*@
+    <div class="bg-white bg-dark p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Bookstore Project</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
     <br />
     @*brings in the view component nav menu*@
     <vc:navigation-menu />
-    <br/>
+    <br />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
