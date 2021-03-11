@@ -25,7 +25,7 @@ namespace MoodyAssignment5.Controllers
             _repsitory = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             return View(new BookListViewModel
             {
@@ -33,19 +33,19 @@ namespace MoodyAssignment5.Controllers
                     .Where(p => category == null || p.Cat == category)
                     .OrderBy(p => p.BookID)
                     //says to print out the next x items on the next page
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize)
                     ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = category == null ?  _repsitory.Book.Count() :
+                    TotalNumItems = category == null ? _repsitory.Book.Count() :
                     //makes it so it shows less pages if there are less books
                         _repsitory.Book.Where(x => x.Cat == category).Count()
                 },
                 CurrentCategory = category
-            });   
+            });
         }
 
         public IActionResult Privacy()
